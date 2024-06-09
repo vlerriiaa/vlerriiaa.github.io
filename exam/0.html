@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>
+            Project 0. Jef Raskin
+        </title>
+  <link rel="stylesheet" href="style.css">
+ </head>
+    <body>
+        <h1>
+            <a href="main.html" title="Main"> Main </a>
+            </h1>
+        <h2>
+            Projects: <a title="Project 0. Jef Raskin" href="0.html"> 0 </a>
+            <a title="Project 1" href="1.html"> 1 </a>
+            <a title="Project 2" href="2.html"> 2 </a>
+            <a title="Project 3" href="3.html"> 3 </a>
+            <a title="Project 4" href="4.html"> 4 </a>
+            <a title="Project 5" href="5.html"> 5 </a>
+            <a title="Project 6" href="6.html"> 6 </a>
+            </h2>
+
+            <h1>Project 0. Jef Raskin - 8</h1>
+<pre style="text-align:left">
+using System.IO;
+using System; 
+
+class AJefRaskinBuckUp
+ {
+ static void Main(string[] args)
+  {
+     System.Console.WriteLine("Hi from AJefraskinBuckUp");
+     DirectoryContent();
+  }
+  static void AFileCopy(FileInfo f)
+  {
+     string s="";
+     s = "e:" + "\\" + f.DirectoryName.Substring(3); 
+     ATestDir(s);
+     s += '\\' + f.Name;
+     try
+     {
+       f.CopyTo(s, true);
+     }
+     catch (Exception ex) 
+     { 
+        Console.WriteLine("*** ÐžÑˆÐ¸Ð±ÐºÐ° Ð¾Ñ‚ JefRaskinBuckUp.cs \n\r"+ex+"\n\r***"); 
+      }
+  }
+
+  static void DirectoryContent()
+  {
+    DirectoryInfo oD= new DirectoryInfo("C:\\_E");
+    Console.WriteLine("DIR:{0}\n", oD.FullName.ToString());
+
+    foreach (FileInfo f in oD.GetFiles())
+    {
+      Console.WriteLine("Filename:{0}", f.FullName);
+      AFileCopy(f);
+    }
+
+            foreach (DirectoryInfo d in oD.GetDirectories())
+            {
+                AProcessDirs(d);
+            }
+
+   }
+
+        static void AProcessDirs(DirectoryInfo oD)
+        {
+            foreach (FileInfo f in oD.GetFiles())
+            {
+                Console.WriteLine("Filename: {0}", f.FullName);
+                AFileCopy(f);
+            }
+            foreach (DirectoryInfo d in oD.GetDirectories())
+            {
+                AProcessDirs(d);
+            }         
+        }
+
+        static void ATestDir(string s)
+        {
+            Console.WriteLine("Hello ATestDir - "+s.ToString());
+
+            DirectoryInfo d = new DirectoryInfo(s);
+            
+            if (d.Exists) return;
+            d.Create();
+            return;
+        }
+ }
+
+</body>
+</html>

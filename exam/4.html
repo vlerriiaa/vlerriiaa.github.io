@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>
+        <a href="main.html" title="Main"> Main </a>
+    </h1>
+
+    <h2>
+
+        Projects: <a title="Project 0. Jef Raskin" href="0.html"> 0 </a>
+        <a title="Project 1" href="1.html"> 1 </a>
+        <a title="Project 2" href="2.html"> 2 </a>
+        <a title="Project 3" href="3.html"> 3 </a>
+        <a title="Project 4" href="4.html"> 4 </a>
+        <a title="Project 5" href="5.html"> 5 </a>
+        <a title="Project 6" href="6.html"> 6 </a>
+    </h2>
+
+    <form method="post" action="#" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjA5OTc2MTk5OGRk5yyeTBvRmxc1xOQsIqOmUVc260cSFnVuw+Ng+WQpM6s=" />
+        </div>
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="38F6FFF6" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAASxepQCKcqnScZSEbSv4KRoeuUxgFguxioNURQmgdo2hOuvs16tuIChXblYth33DKEyS7k1ksfAIe5DbftbM/156ILrOn1exquYjbe/ScDvQ+qLVbL14R6DZc1ZETSHHu0=" />
+        </div>
+        <input name="tbxA" type="text" id="tbxA" />+
+        <input name="tbxB" type="text" id="tbxB" />
+        <input type="button" name="btnPlus" value="=" id="btnPlus" onclick="calculate()" />
+        <span id="lblLabel"></span>
+    </form>
+
+    <script>
+        function calculate() {
+            var tbxA = parseFloat(document.getElementById("tbxA").value);
+            var tbxB = parseFloat(document.getElementById("tbxB").value);
+            var result = tbxA + tbxB;
+            document.getElementById("lblLabel").innerText = result;
+        }
+    </script>
+</body>
+</html>

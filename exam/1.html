@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <h1>
+        <a href="main.html" title="Main"> Main </a>
+    </h1>
+
+    <h2>
+        Projects: <a title="Project 0. Jef Raskin" href="0.html"> 0 </a>
+        <a title="Project 1" href="1.html"> 1 </a>
+        <a title="Project 2" href="2.html"> 2 </a>
+        <a title="Project 3" href="3.html"> 3 </a>
+        <a title="Project 4" href="4.html"> 4 </a>
+        <a title="Project 5" href="5.html"> 5 </a>
+        <a title="Project 6" href="6.html"> 6 </a>
+    </h2>
+
+    <form method="post" action="#" id="form1" onsubmit="return calculate()">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDY2NzE5NTkwZGSmacf3qAzcluBzqP+piGQuNufVnaOVE4y4YY6mp8fBtg==" />
+        </div>
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D1E909B0" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAPsHVVqViCy6/ZPmhQgI7NKeuUxgFguxioNURQmgdo2hDJLuTWSx8Ah7kNt+1sz/XnMAXh4IFSsLch42FXAhXV3OP72j3FZFV7lY2Uf44X2wA==" />
+        </div>
+        <div>
+            <h3>
+                LB(<input name="tbxA" type="text" value="1" id="tbxA" style="width:53px;" />)
+                <input id="btnPlus" type="submit" name="btnPlus" value="=" style="width:49px;" />
+                <span id="lblLabel">Label</span>
+            </h3>
+        </div>
+    </form>
+    <br />
+    <script>
+    function calculate() {
+            var tbxA = parseFloat(document.getElementById("tbxA").value);
+            // Вычисляем результат
+            var result = tbxA + 1; // Пример: прибавляем 1 к введенному числу
+            // Отображаем результат в метке
+            document.getElementById("lblLabel").innerText = result;
+            // Возвращаем false, чтобы форма не отправлялась на сервер
+            return false;
+        }</script>
+</body>
+</html>
