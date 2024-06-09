@@ -1,0 +1,2 @@
+C:\Users\d7181\OneDrive\Рабочий стол\теория информации\exam\exam\obj\Debug\exam.vbproj.AssemblyReference.cache
+C:\Users\d7181\OneDrive\Рабочий стол\теория информации\exam\exam\obj\Debug\exam.vbproj.CoreCompileInputs.cache

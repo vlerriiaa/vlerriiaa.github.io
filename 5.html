@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Shannon entropy</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>function calculateEntropy() {
+            var p1 = parseFloat(document.getElementById("TextBox1").value);
+            var p2 = parseFloat(document.getElementById("TextBox2").value);
+            var p3 = parseFloat(document.getElementById("TextBox3").value);
+            var p4 = parseFloat(document.getElementById("TextBox4").value);
+
+            // Calculate the Shannon entropy
+            var total = p1 + p2 + p3 + p4;
+            var entropy = -((p1 / total) * Math.log2(p1 / total) + (p2 / total) * Math.log2(p2 / total) + (p3 / total) * Math.log2(p3 / total) + (p4 / total) * Math.log2(p4 / total));
+
+            // Display the result
+            document.getElementById("Label1").innerText = entropy.toFixed(15);
+        }</script>
+</head>
+<body>
+    <h1>
+        <a href="main.html" title="Main"> Main </a>
+    </h1>
+
+    <h2>
+        Projects: <a title="Project 0. Jef Raskin" href="0.html"> 0 </a>
+        <a title="Project 1" href="1.html"> 1 </a>
+        <a title="Project 2" href="2.html"> 2 </a>
+        <a title="Project 3" href="3.html"> 3 </a>
+        <a title="Project 4" href="4.html"> 4 </a>
+        <a title="Project 5" href="5.html"> 5 </a>
+        <a title="Project 6" href="6.html"> 6 </a>
+    </h2>
+    <form method="post" action="./" id="form1" onsubmit="calculateEntropy(); return false;">
+        <div>
+            <center>
+                <h1 style="font-family: sans-serif;">Information Theory</h1>
+                <h2 style="font-family: sans-serif;">Shannon entropy</h2>
+                <div class="projects">
+                </div>
+                <p>
+                    <img alt="" class="auto-style1" src="img1.jpg" />
+                </p>
+                <p>
+                    <img alt="" class="auto-style2" src="img2.jpg" />
+                </p>
+                <p>
+                    <input name="TextBox1" type="text" value="50" id="TextBox1" style="width:84px;" />
+                    <input name="TextBox2" type="text" value="25" id="TextBox2" style="width:84px;" />
+                    <input name="TextBox3" type="text" value="12.5" id="TextBox3" style="width:84px;" />
+                    <input name="TextBox4" type="text" value="12.5" id="TextBox4" style="width:84px;" />
+                    <input type="submit" name="Button1" value="Calculate H(X)" id="Button1" />
+                    <span id="Label1">0.195179762781594</span>
+                </p>
+            </center>
+        </div>
+    </form>
+</body>
+</html>
